@@ -62,11 +62,11 @@
 4. **Security Implemented (Firewall, IDS, IPS) Detection and evasion**
 
 # 1. Live hosts
-- arp-scan --local
-- nmap -sn <network>/<cidr>
+- ```arp-scan --local```
+- ```nmap -sn <network>/<cidr>```
 	- -sn specify NO-Port Ping Scan
-- ping <ip>
-- netdiscover -r <network address>/<cidr>
+- ```ping <ip>```
+- ```netdiscover -r <network address>/<cidr>```
 --------------------------------------------------------------------------
 ## Nmap Port Scan Status
 	
@@ -84,70 +84,70 @@
 # k2. Open Ports and Running Services Scan
 **Nmap**
 		
-- nmap <ip>
+- ```nmap <ip>```
 	- Simple Port Scan
-- nmap -v <ip>
+- ```nmap -v <ip>```
 	- Port Scan with increase verbosity. (-vv is more powerful)
-- nmap <ip> <ip> <ip>
+- ```nmap <ip> <ip> <ip>```
 	- Scan Multiple host in single go
-- nmap <1.1.1.2-200>
+- ```nmap <1.1.1.2-200>```
 	- Scan IP Range from 2 to 200
-- nmap <network>/cidr
+- ```nmap <network>/cidr```
 	- Scan Entire Subnet
-- nmap -p 1-65535 <ip>
+- ```nmap -p 1-65535 <ip>```
 	- -p specify Port Numbers to scan.
-- nmap -p U:<port>,T:<port> <ip>
+- ```nmap -p U:<port>,T:<port> <ip>```
 	- Scan specified TCP and UDP ports. use "*" for all.
-nmap -sU <ip>
+- ```nmap -sU <ip>```
 	- Scan 1000 Common UDP Ports
-- nmap -T<0-5> <ip>
+- ```nmap -T<0-5> <ip>```
     - -T specify intensity of scan to time taken by scan. 5 is fastest and 0 is slowest. Default Speed is 3(-T3).
-- nmap -sT <ip>
+- ```nmap -sT <ip>```
 	- TCP Connect Scan
-- nmap -iL list.txt
+- ```nmap -iL list.txt```
 	- scan ip written in list.txt file (Separate IP by Space, Tab or New Line). --exclude file list.txt (to exclude ip from search)
-- nmap -A <ip>
+- ```nmap -A <ip>```
 	- Aggressive Scan (it use -O -sC --traceroute -sV) options
-- nmap -O <ip>
+- ```nmap -O <ip>```
 	- -O is used for OS Detection
-- nmap -sC <ip>
+- ```nmap -sC <ip>```
 	- -sC is used to run Default NSE Scripts  --- **--script**
-- nmap -sV <ip>
+- ```nmap -sV <ip>```
 	- -sv is used for Service Version Detection
-- nmap -6 <ip>
+- ```nmap -6 <ip>```
 	- IPv6 Scan
-- nmap -sS <ip>
+- ```nmap -sS <ip>```
     - Sync Scan/Ping. Helpful in case where ICMP pings are blocked.
--nmap -sA <ip>
+- ```nmap -sA <ip>```
     - ACK Scan/Ping. Helpful in case where ICMP pings are blocked. Null Scan
-- nmap --scanflags SYNACKFIN <ip>
+- ```nmap --scanflags SYNACKFIN <ip>```
     - We can set flags using --scanflags option.
-- nmap -Pn <ip>
+- ```nmap -Pn <ip>```
 	- Don't Ping Scan (When Firewall block Ping Packets)
-- nmap -sR <ip>
+- ```nmap -sR <ip>```
 	- Scan for RPC (Remote Procedure Call) Service
 	
 **Hping3**
 
-- hping3 --icmp <ip> --verbose
+- ```hping3 --icmp <ip> --verbose```
 	- Ping Scan in Verbose
-- hping3 --scan <ports> <ip>
+- ```hping3 --scan <ports> <ip>```
 	- Scan for Open Ports on IP (--ack, --syn, --fin, --urg)
-- hping3 --udp <ip> --verbose
+- ```hping3 --udp <ip> --verbose```
 	- UDP port Scan in Verbose
 --------------------------------------------------------------------------
 # 3. OS Detection
-- nmap -O <ip>
+- ```nmap -O <ip>```
 	- OS Detection with Nmap
 --------------------------------------------------------------------------
 # 4. Security Implemented (Firewall, IDS, IPS) Detection and evasion
 
-- nmap -f <ip>
+- ```nmap -f <ip>```
 	- -f will fragment packets in 8-byte packets. Helpful when attempting to evade some older or improperly configured firewall or we can specify packet fragment size using --mtu <size>" option. Size should be multiple of 8
 
-- nmap -D RND:<val> <ip>
+- ```nmap -D RND:<val> <ip>```
 	- -D Decoy option is used to mask an Nmap scan by using one or more decoys. Decoy is used to hide identity. RND is Number of Decoy Address to be used. We can also specify Addresses by our own. as ```nmap -D decoy1,decoy2,decoy3,etc <ip>```
 
-- nmap -sX <ip>
+- ```nmap -sX <ip>```
 	- Nmap XMas Scan (if Firewall is enable you get (all thousand ports are closed/filtered), if Firewall is disable you get (Closed). Xmas Scan use PSH+URG+FIN flag or All flag for packets and create abnormal situation for client for which client either respond with RST Flag or some relevant info.
 
