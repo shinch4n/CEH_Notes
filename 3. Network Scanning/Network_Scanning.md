@@ -62,10 +62,11 @@
 4. **Security Implemented (Firewall, IDS, IPS) Detection and evasion**
 
 # 1. Live hosts
-	arp-scan --local
-	nmap -sn <network>/<cidr>					-sn specify NO-Port Ping Scan
-	ping <ip>
-	netdiscover -r <network address>/<cidr>
+- arp-scan --local
+- nmap -sn <network>/<cidr>
+	- -sn specify NO-Port Ping Scan
+- ping <ip>
+- netdiscover -r <network address>/<cidr>
 --------------------------------------------------------------------------
 ## Nmap Port Scan Status
 	
@@ -149,8 +150,4 @@ nmap -sU <ip>
 
 - nmap -sX <ip>
 	- Nmap XMas Scan (if Firewall is enable you get (all thousand ports are closed/filtered), if Firewall is disable you get (Closed). Xmas Scan use PSH+URG+FIN flag or All flag for packets and create abnormal situation for client for which client either respond with RST Flag or some relevant info.
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-# We can also use Zenmap
---------------------------------------------------------------------------
---------------------------------------------------------------------------
+
