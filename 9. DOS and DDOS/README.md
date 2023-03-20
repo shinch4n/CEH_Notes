@@ -1,5 +1,6 @@
 ```
-Denial-of-Service is type of attack on which service offered by a system or a network is denied/unavailable. Service may either be denied, reduce the functionality or prevent the access.
+Denial-of-Service is type of attack on which service offered by a system or a network is denied/unavailable. 
+Service may either be denied, reduce the functionality or prevent the access.
 ```
 
 # **Symptoms of DoS attack:**
